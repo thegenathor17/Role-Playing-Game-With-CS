@@ -5,35 +5,45 @@ using System.Text;
 using System.Threading.Tasks;
 namespace cs_gae
 {
-    internal class Human
+    public class Human
     {
         //variables
-        private string nombre = "Human";
-        private int ataque = 10;
-        private int defensa = 5;
-        private int vida = 35;
-        private int magia = 0;
+        public string Nombre { get; set; }
+        public int Ataque { get; set; }
+        public int Defensa { get; set; }
+        public int Vida { get; set; }
+        public int Magia { get; set; }
+        public int Nivel { get; set; }
+        public int Experiencia { get; set; }
+        public bool estaVivo = true;
+
         //variables
         //constructores
         public Human(int ataque, int defensa, int vida, int magia, string nombre = "Human")
         {
-            this.nombre = nombre;
-            this.ataque = ataque;
-            this.defensa = defensa;
-            this.vida = vida;
-            this.magia = magia;
+            this.Nombre = nombre;
+            this.Ataque = ataque;
+            this.Defensa = defensa;
+            this.Vida = vida;
+            this.Magia = magia;
         }
         public Human(int ataque, int defensa, int vida, string nombre = "Human")
         {
-            this.nombre = nombre;
-            this.ataque = ataque;
-            this.defensa = defensa;
-            this.vida = vida;
+            this.Nombre = nombre;
+            this.Ataque = ataque;
+            this.Defensa = defensa;
+            this.Vida = vida;
         }
         public Human(string nombre = "Human")
         {
-            this.nombre = nombre;
+            this.Nombre = nombre;
         }
         //constructores
+        //destructor
+        ~Human()
+        {
+            Console.WriteLine($"{Nombre} ha muerto.");
+        }
+        //destructor
     }
 }
